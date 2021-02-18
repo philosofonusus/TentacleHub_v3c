@@ -1,0 +1,13 @@
+html, body {
+	background-color: #222b31;
+	font-family: "Rubik", sans-serif;
+}
+.container{
+
+}
+@media (min-width: 425px) {
+	.container{
+		margin-left: 280px;
+		margin-top: 60px;
+	}
+}

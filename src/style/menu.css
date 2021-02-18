@@ -1,0 +1,111 @@
+.sidebar{
+    background-color: #191c1f;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: 280px;
+    top: 60px;
+    z-index: 69;
+    height: 95vh;
+}
+.sidebar__menu{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+    margin: 30px 0 30px;
+}
+.sidebar__menu a{
+    color: white;
+    text-decoration: none;
+}
+.sidebar__menu li{
+    padding: 15px 0 15px 50px;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    transition: background-color 0.5s, color 0.25s;
+}
+.sidebar__menu li:hover a, .sidebar__menu li.active a{
+    color: #ff424f;
+}
+
+.sidebar__menu li:hover, .sidebar__menu li.active{
+    background-color: #222b31;
+}
+.sidebar hr{
+    height: 2px;
+    width: 80%;
+    background-color: #222b31;
+    border: none;
+}
+.sidebar__menu li::after, .sidebar__menu li::after{
+    content: "--->";
+    color: white;
+    transition: transform 0.5s,opacity 0.3s, ease-in 0.3s;
+    margin-left: auto;
+    padding-right: 20px;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.sidebar__menu li.active::after{
+    opacity: 1;
+    transform: translateX(0);
+}
+.last-activity{
+    display: flex;
+    padding: 50px;
+}
+.last-activity__notifications{
+    border: none;
+    border-radius: 25px;
+    color: white;
+    margin-left: 10px;
+}
+.last-activity__title{
+    color: white;
+}
+.user-href{
+    color: white;
+    font-weight: 500;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 17px 3px rgba(14,14,14,0.5);
+    cursor: pointer;
+    display: flex;
+    border-radius: 3px;
+    transition: ease-in-out 0.5s;
+    background-color: #222b31;
+    width: fit-content;
+    text-decoration: none;
+    margin: 30px auto 0;
+}
+.user-href svg{
+    width: 18px;
+    fill: white;
+    margin-left: 10px;
+}
+.user-href:hover{
+    color: white;
+    background-color: #ff424f;
+}
+.menu-btn{
+    margin: 0 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: none;
+}
+@media (max-width: 425px) {
+    .sidebar{
+        left: -280px;
+        transition: left 0.5s ease-in-out;
+    }
+    .sidebar_active{
+        left: 0;
+    }
+    .menu-btn{
+        display: block;
+    }
+
+}
